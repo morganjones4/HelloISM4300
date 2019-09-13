@@ -1,81 +1,68 @@
-﻿/* 
- Author: Morgan Jones
- Date: 9/10/2019
- Comments: This is Deliverable 2, making conditional statements.
- */
+﻿using System;
 
-using System;
-
-namespace Deliverable_2__Conditional_Statement
+namespace Deliverable_2___Iteration_Statement
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // This is asking for the user to give their input. 
-            Console.WriteLine("What grade do you expect to get in ISM4300 with Professor Clinton Daniel?");
-            Console.ReadKey(true);
+            // Asking the user for input 
+            Console.WriteLine("Please enter an integer between 1 and 100!");
+
+            // Using the try catch block to validate user input
             try
-            { 
-            // This will gather the users input
-        string input = Console.ReadLine();
-
-        int grades = int.Parse(Console.ReadLine());
-        
-            // writting the letter that goes along with the number the user types in.
-        if (int grades >= 90)
             {
-                Console.WriteLine("Congrats, you have an A in the class!");
-                
-            }
-            // Writting to show grade that the user inputs.
-        else if ((int grades >= 80) && (int grades < 90))
-        {
-                Console.WriteLine("You have a B in the class!");
-               
-            }
+                // This will gather the information from the user.
+                string input = Console.ReadLine();
+                // This will be used to perform the iteration statement
+                int value_of_input = int.Parse(input);
 
-            // Writting to show grade that the user inputs.
-        else if (int grades < 80) && (int grades >= 70)
+                // Giving an IF/Else statement to the users input of 1-100
+                if ((value_of_input > 0) && (value_of_input <= 100))
+                {
+                    Console.WriteLine("Executing a For Loop!");
+                    Console.WriteLine("The For Loop will iterate" + value_of_input + "times.");
+                    // The while loop
+                    for (int i = 0; i < value_of_input; i++)
+                    {
+                        Console.WriteLine("The value of the varible i in this iteration is:" + i.ToString());
+                    }
+
+                    Console.WriteLine("Press any key to exit the program....");
+                    // Wait for the user to make input.
+                    Console.ReadKey(true);
+                }
+
+                while (value_of_input > 0)
+                {
+                    Console.WriteLine("The value of the iteration is:" + value_of_input.ToString());
+                    value_of_input--;
+                }
+                Console.WriteLine("Press any key to exit!");
+                Console.ReadKey(true);
             
-            {    
-            Console.WriteLine("You will get a C in the class!");
-                
-            }
 
-            // Writting to show grade that user inputs.
-        else if (int grades < 70) && (int grades >= 60)
+            else 
             {
-                Console.WriteLine("You will get a D in the class...");
-                
-            }
-            // Writting to show grade the user inputs.
-        else if (int grades < 60)
-            {
-            Console.WriteLine("You are going to fail the class...");
-                
-            }
+                Console.WriteLine("Please enter an integer between 1 and 100!");
+                Console.WriteLine("Press any key to exit the program.");
+                Console.ReadKey(true);
 
-}   
-        // If they do not type in a number in any of the ranges listed above this message will appear.
-        else
-            {
-              Console.WriteLine("Please enter a number you think you will get in the course!");
             }
-                
+            
+
+
+
             catch
-            {
-                Console.WriteLine("Please type in an integer!");
-            }
-    
-    
-   
+                {
+                    Console.WriteLine("Please enter an integer between 1 and 100!");
+                Console.WriteLine("Press any key to exit the program!");
+                    Console.ReadKey(true);
+                }
 
 
+              
 
-
-
-
+        }
     }
-
 }
