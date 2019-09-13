@@ -15,7 +15,8 @@ namespace Deliverable_2__Conditional_Statement
             // This is asking for the user to give their input. 
             Console.WriteLine("What grade do you expect to get in ISM4300 with Professor Clinton Daniel?");
             Console.ReadKey(true);
-        
+            try
+            { 
             // This will gather the users input
         string input = Console.ReadLine();
 
@@ -45,7 +46,7 @@ namespace Deliverable_2__Conditional_Statement
             // Writting to show grade that user inputs.
         else if (int grades < 70) && (int grades >= 60)
             {
-                Console.Writeline("You will get a D in the class...");
+                Console.WriteLine("You will get a D in the class...");
                 
             }
             // Writting to show grade the user inputs.
@@ -59,10 +60,13 @@ namespace Deliverable_2__Conditional_Statement
         // If they do not type in a number in any of the ranges listed above this message will appear.
         else
             {
-              Console.Writeline("Please enter a number you think you will get in the course!");
+              Console.WriteLine("Please enter a number you think you will get in the course!");
             }
                 
-
+            catch
+            {
+                Console.WriteLine("Please type in an integer!");
+            }
     
     
    
